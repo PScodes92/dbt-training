@@ -4,5 +4,5 @@
     )
 }}
 
-select * 
-from dbtworkshop.globalmart.customer
+select * from
+{{ source('globalmart', 'customer') }}

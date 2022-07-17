@@ -5,4 +5,4 @@
 }}
 
 select *
-from DBTWORKSHOP.GLOBALMART.product
+from {{ source('globalmart', 'product') }}

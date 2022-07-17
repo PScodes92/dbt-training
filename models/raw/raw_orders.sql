@@ -7,6 +7,6 @@
 
 
 select * 
-from DBTWORKSHOP.GLOBALMART.ORDERS
+from {{ source('globalmart', 'orders') }}
 
 

@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: globalmart
+    database: dbtworkshop
+    schema: globalmart
+    tables:
+      - name: customer
+      - name: orders
+      - name: product

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+dbtversion:1.1.1
+
+>>>>>>> 152affcf821b0092d8d879f7298c2509dd0eddc4
 jobs:
 # Give each job a unique name. The name will be displayed in the Fivetran dashboard once your jobs are imported.
 # Job names must be unique.
@@ -20,6 +25,7 @@ jobs:
      - name: run models
        command: dbt run --models my_first_model my_second_model # This example will run two specific models.
 
+<<<<<<< HEAD
  - name: weekdays
    schedule: 30 7 * * 1-5 # The example will run every weekday at 7:30am.
    steps:
@@ -31,3 +37,5 @@ jobs:
    steps:
      - name: version
        command: dbt --version
+=======
+>>>>>>> 152affcf821b0092d8d879f7298c2509dd0eddc4

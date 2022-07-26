@@ -1,23 +1,24 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
-
-select 
---from raw orders
-o.orderid, o.orderdate, o.shipdate, o.shipmode,
-o.ordersellingprice - o.ordercostprice as orderprofit,
-o.ordercostprice, o.ordersellingprice,
+select
+--from raw_orders
+orderid,
+orderdate,
+shipdate,
+shipmode,
+o.customerid,
+o.productid,
+ordersellingprice,
+ordercostprice,
 --from raw_customer
-c.customername, c.segment, c.country,
---from raw product
-p.category, p.productname, p.subcategory
--- {{ markup('ordersellingprice','ordercostprice') }} as markup
+customername,
+segment,
+country,
+--from raw_product
+category,
+productname,
+subcategory,
+ordersellingprice - ordercostprice as orderprofit
 from {{ ref('raw_orders') }} as o
 left join {{ ref('raw_customer') }} as c
 on o.customerid = c.customerid
 left join {{ ref('raw_product') }} as p
 on o.productid = p.productid
-
-
